@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book | Book Club</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top-nav">
+    <div class="logo">Book Club</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="genres.html">Genres</a>
+      <a href="books.html?genre=all">All Books</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main class="book-page">
+    <a href="books.html?genre=all" class="back-link">← back to shelf</a>
+
+    <section class="book-hero">
+      <div class="book-hero-cover">
+        <div class="book-circle-large">
+          <img id="book-cover" src="" alt="" />
+        </div>
+      </div>
+
+      <div class="book-hero-info">
+        <h1 id="book-title"></h1>
+        <h3 id="book-author"></h3>
+        <p class="book-rating" id="book-rating"></p>
+        <p class="book-genre" id="book-genre"></p>
+        <p class="book-tagline" id="book-tagline"></p>
+      </div>
+
+      <div class="author-card">
+        <img id="author-image" src="" alt="" />
+        <h4 id="author-name"></h4>
+        <p id="author-bio"></p>
+      </div>
+    </section>
+
+    <section class="book-review">
+      <h2>My Thoughts</h2>
+      <p id="book-review-text"></p>
+    </section>
+
+    <section class="book-extras">
+      <div class="extra-card">
+        <h3>Favorite Quote</h3>
+        <p id="book-quote"></p>
+      </div>
+
+      <div class="extra-card">
+        <h3>Themes</h3>
+        <p id="book-themes"></p>
+      </div>
+
+      <div class="extra-card">
+        <h3>Who Should Read This</h3>
+        <p id="book-recommend"></p>
+      </div>
+    </section>
+
+    <section class="book-discussion">
+      <h2>Discussion</h2>
+      <p>Discussion board coming soon 👀</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

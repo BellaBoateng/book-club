@@ -1,0 +1,777 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+    --deep-green: #223030;
+    --brown: #6b544a;
+    --sage: #959d90;
+    --tan: #bba58f;
+    --blush: #e8d9cd;
+    --cream: #efefe9;
+    --text-dark: #1f1d1a;
+    --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.12);
+    --shadow-strong: 0 22px 36px rgba(0, 0, 0, 0.18);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--cream);
+    color: var(--text-dark);
+    font-family: 'Inter', sans-serif;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.top-nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(239, 239, 233, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(34, 48, 48, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.1rem 2rem;
+}
+
+.logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+}
+
+.top-nav nav {
+    display: flex;
+    gap: 1.4rem;
+}
+
+.top-nav nav a {
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.top-nav nav a:hover {
+    color: var(--brown);
+}
+
+.landing-page {
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.landing-hero {
+    position: relative;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 1.5rem;
+    background: linear-gradient(180deg, var(--cream) 0%, #e7e4dd 100%);
+}
+
+.hero-content {
+    width: min(760px, 92%);
+    text-align: center;
+    padding: 3rem 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 0.82rem;
+    color: var(--brown);
+    margin-bottom: 1rem;
+}
+
+.hero-content h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.5rem, 8vw, 6.5rem);
+    line-height: 0.95;
+    margin-bottom: 1rem;
+}
+
+.hero-subtext {
+    max-width: 560px;
+    margin: 0 auto 2rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.hero-button,
+.outline-button {
+    display: inline-block;
+    border-radius: 999px;
+    padding: 0.9rem 1.5rem;
+    transition: all 0.25s ease;
+    font-weight: 500;
+}
+
+.hero-button {
+    background: var(--deep-green);
+    color: white;
+    box-shadow: var(--shadow-soft);
+}
+
+.hero-button:hover {
+    transform: translateY(-2px);
+    background: var(--brown);
+}
+
+.floating-book {
+    position: absolute;
+    width: clamp(120px, 14vw, 180px);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: var(--shadow-strong);
+    opacity: 0;
+}
+
+.floating-book img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.floating-book-left-top {
+    top: 10%;
+    left: -220px;
+    transform: rotate(-14deg);
+    animation: slideFromLeftTop 1.4s ease forwards;
+}
+
+.floating-book-right-top {
+    top: 12%;
+    right: -220px;
+    transform: rotate(14deg);
+    animation: slideFromRightTop 1.4s ease forwards;
+    animation-delay: 0.2s;
+}
+
+.floating-book-left-bottom {
+    bottom: 10%;
+    left: -220px;
+    transform: rotate(12deg);
+    animation: slideFromLeftBottom 1.5s ease forwards;
+    animation-delay: 0.35s;
+}
+
+.floating-book-right-bottom {
+    bottom: 11%;
+    right: -220px;
+    transform: rotate(-12deg);
+    animation: slideFromRightBottom 1.5s ease forwards;
+    animation-delay: 0.45s;
+}
+
+@keyframes slideFromLeftTop {
+    to {
+        left: 9%;
+        opacity: 1;
+        transform: rotate(-10deg);
+    }
+}
+
+@keyframes slideFromRightTop {
+    to {
+        right: 9%;
+        opacity: 1;
+        transform: rotate(10deg);
+    }
+}
+
+@keyframes slideFromLeftBottom {
+    to {
+        left: 12%;
+        opacity: 1;
+        transform: rotate(8deg);
+    }
+}
+
+@keyframes slideFromRightBottom {
+    to {
+        right: 12%;
+        opacity: 1;
+        transform: rotate(-8deg);
+    }
+}
+
+.genres-page,
+.books-page {
+    width: min(1200px, 92%);
+    margin: 0 auto;
+    padding: 2.5rem 0 4rem;
+}
+
+.genres-intro {
+    display: grid;
+    grid-template-columns: 1.4fr 0.9fr;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.section-label {
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.82rem;
+    color: var(--brown);
+    margin-bottom: 0.85rem;
+}
+
+.intro-text h1,
+.books-header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+    margin-bottom: 0.8rem;
+}
+
+.intro-text p,
+.books-header p,
+.genre-copy p {
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.explore-all-card {
+    background: var(--sage);
+    color: white;
+    border-radius: 26px;
+    padding: 2rem;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.25s ease;
+}
+
+.explore-all-card:hover {
+    transform: translateY(-4px);
+}
+
+.explore-all-card h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    margin-bottom: 0.6rem;
+}
+
+.explore-all-card span {
+    margin-top: 1.2rem;
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    width: fit-content;
+    padding: 0.55rem 1rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+}
+
+.genre-feature {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+}
+
+.genre-feature-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    min-height: 380px;
+    width: min(1200px, 92%);
+    margin: 0 auto;
+}
+
+.light-section {
+    background: #e4dfd6;
+}
+
+.dark-section {
+    background: var(--sage);
+    color: white;
+}
+
+.genre-image-placeholder,
+.genre-copy {
+    padding: 2.5rem 2rem;
+}
+
+.genre-image-placeholder {
+    display: flex;
+    justify-content: center;
+    padding: 3rem 4rem;
+}
+
+.genre-copy {
+    max-width: 700px;
+    padding: 3rem 4rem;
+}
+
+.placeholder-card {
+    width: min(360px, 100%);
+    aspect-ratio: 4 / 5;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    background: white;
+}
+
+.placeholder-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.genre-copy h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    margin-bottom: 1rem;
+}
+
+.placeholder-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.outline-button {
+    margin-top: 1.4rem;
+    border: 1px solid var(--deep-green);
+    color: var(--deep-green);
+}
+
+.outline-button:hover {
+    background: var(--deep-green);
+    color: white;
+}
+
+.light-outline {
+    border-color: white;
+    color: white;
+}
+
+.light-outline:hover {
+    background: white;
+    color: var(--deep-green);
+}
+
+.reverse-layout .genre-feature-inner .genre-image-placeholder {
+    order: 2;
+}
+
+.reverse-layout .genre-feature-inner .genre-copy {
+    order: 1;
+}
+
+.books-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 3.5rem 2rem;
+    justify-items: center;
+}
+
+.book-card {
+    width: 100%;
+    max-width: 260px;
+    text-align: center;
+    display: block;
+}
+
+.book-card:hover {
+  text-decoration: none;
+}
+
+.book-circle {
+    width: 185px;
+    height: 185px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    background: adial-gradient(circle at 60% 60%, #8a7a70, #6b544a);
+    position: relative;
+    box-shadow:
+        inset 0 10px 18px rgba(255, 255, 255, 0.08),
+        0 18px 30px rgba(0, 0, 0, 0.08);
+}
+
+.book-cover {
+    position: absolute;
+    left: 50%;
+    top: -24px;
+    transform: translateX(-50%);
+    width: 98px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+    transition: transform 0.28s ease, top 0.28s ease, box-shadow 0.28s ease;
+}
+
+.book-card:hover .book-cover {
+    top: -42px;
+    transform: translateX(-50%) scale(1.06);
+    box-shadow: 0 22px 34px rgba(0, 0, 0, 0.25);
+}
+
+.book-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    margin-bottom: 0.3rem;
+}
+
+.book-card p {
+    color: rgba(31, 29, 26, 0.75);
+    font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+
+    .genres-intro,
+    .genre-feature-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .reverse-layout .genre-feature-inner .genre-image-placeholder,
+    .reverse-layout .genre-feature-inner .genre-copy {
+        order: initial;
+    }
+
+    .books-grid {
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+    }
+
+    .floating-book-left-top,
+    .floating-book-left-bottom {
+        left: -140px;
+    }
+
+    .floating-book-right-top,
+    .floating-book-right-bottom {
+        right: -140px;
+    }
+}
+
+@media (max-width: 640px) {
+    .top-nav {
+        flex-direction: column;
+        gap: 0.85rem;
+        padding: 1rem 1.2rem;
+    }
+
+    .hero-content {
+        padding: 2rem 1rem;
+    }
+
+    .books-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .floating-book {
+        width: 110px;
+    }
+
+    .hero-subtext {
+        font-size: 0.98rem;
+    }
+
+    .genre-image-placeholder,
+    .genre-copy {
+        padding: 2rem 1.25rem;
+    }
+}
+
+.book-page {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+  padding: 2rem 0 4rem;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 2rem;
+  color: var(--brown);
+  font-weight: 500;
+}
+
+.book-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.9fr;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.book-hero-cover {
+  display: flex;
+  justify-content: center;
+}
+
+.book-circle-large {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: var(--brown);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    inset 0 10px 18px rgba(255,255,255,0.08),
+    0 18px 30px rgba(0,0,0,0.08);
+}
+
+.book-circle-large img {
+  width: 135px;
+  height: 205px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 12px 22px rgba(0,0,0,0.18);
+}
+
+.book-hero-info h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 5vw, 4.8rem);
+  line-height: 0.95;
+  margin-bottom: 0.6rem;
+}
+
+.book-hero-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.book-rating,
+.book-genre {
+  margin-bottom: 0.5rem;
+}
+
+.book-tagline {
+  margin-top: 1rem;
+  line-height: 1.7;
+  font-style: italic;
+  max-width: 460px;
+}
+
+.author-card {
+  background: #e4dfd6;
+  padding: 1.5rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+}
+
+.author-card img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1rem;
+}
+
+.author-card h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.author-card p {
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.book-review {
+  background: #f5f3ed;
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.book-review h2,
+.book-discussion h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.book-review p {
+  line-height: 1.85;
+  font-size: 1rem;
+}
+
+.book-extras {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.extra-card {
+  background: #e4dfd6;
+  padding: 1.5rem;
+  border-radius: 18px;
+}
+
+.extra-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem;
+}
+
+.extra-card p {
+  line-height: 1.7;
+}
+
+.book-discussion {
+  margin-top: 2rem;
+  padding: 2rem;
+  background: var(--sage);
+  color: white;
+  border-radius: 20px;
+}
+
+@media (max-width: 900px) {
+  .book-hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .book-tagline {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .book-extras {
+    grid-template-columns: 1fr;
+  }
+}
+
+.about-page {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+  padding: 2.5rem 0 4rem;
+}
+
+.about-hero {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2.5rem;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.about-hero-text h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 6vw, 5rem);
+  line-height: 0.95;
+  margin-bottom: 1rem;
+}
+
+.about-intro {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  max-width: 650px;
+}
+
+.about-image-card {
+  background: #e4dfd6;
+  border-radius: 28px;
+  padding: 1rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.about-image-card img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 22px;
+}
+
+.about-story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.about-story-card {
+  background: #f5f3ed;
+  border-radius: 22px;
+  padding: 2rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.about-story-card h2,
+.about-highlight-text h2,
+.about-mini-note h3 {
+  font-family: 'Cormorant Garamond', serif;
+  margin-bottom: 0.9rem;
+}
+
+.about-story-card h2,
+.about-highlight-text h2 {
+  font-size: 2.2rem;
+}
+
+.about-story-card p,
+.about-highlight-text p,
+.about-mini-note p {
+  line-height: 1.8;
+}
+
+.about-highlight {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  background: var(--sage);
+  color: white;
+}
+
+.about-highlight-inner {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+  padding: 3rem 0;
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.about-mini-note {
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 22px;
+  padding: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .about-hero,
+  .about-story,
+  .about-highlight-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .about-image-card {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+}
