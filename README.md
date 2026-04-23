@@ -63,7 +63,7 @@ I enjoy creating experiences that feel both **intentional and expressive**, wher
 
 ## 🚀 Live Site
 
-👉 [View the project](https://your-username.github.io/book-club/)
+👉 [View the project](https://bellaboateng.github.io/book-club/)
 
 ---
 
